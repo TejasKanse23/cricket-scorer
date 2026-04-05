@@ -1,0 +1,332 @@
+/* ── Score Controls — Clean Grid Style ── */
+
+/* 3×3 Button Grid */
+.score-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.55rem;
+  margin-bottom: 0.75rem;
+}
+
+.score-btn {
+  border-radius: var(--radius-md);
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 1.1rem 0.5rem;
+  border: 2px solid transparent;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  text-align: center;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+}
+
+.score-btn:active { transform: scale(0.93); }
+
+/* Dot */
+.btn-dot {
+  background: var(--bg-card2);
+  border-color: var(--border);
+  color: var(--text-secondary);
+}
+.btn-dot:hover { border-color: rgba(255,255,255,0.18); }
+
+/* Run (1,2,3) */
+.btn-run {
+  background: var(--bg-card2);
+  border-color: rgba(255,255,255,0.1);
+  color: var(--text-primary);
+}
+.btn-run:hover { border-color: rgba(255,255,255,0.25); background: #222d42; }
+
+/* 4 */
+.btn-four {
+  background: rgba(59,158,255,0.1);
+  border-color: var(--four);
+  color: var(--four);
+}
+.btn-four:hover { background: rgba(59,158,255,0.2); box-shadow: 0 0 16px rgba(59,158,255,0.2); }
+
+/* 6 */
+.btn-six {
+  background: var(--six-dim);
+  border-color: var(--six);
+  color: var(--six);
+}
+.btn-six:hover { background: rgba(168,85,247,0.25); box-shadow: 0 0 16px rgba(168,85,247,0.25); }
+
+/* Wide */
+.btn-wide {
+  background: var(--warning-dim);
+  border-color: var(--warning);
+  color: var(--warning);
+  font-size: 0.95rem;
+}
+.btn-wide:hover { background: rgba(255,184,48,0.18); }
+
+/* No Ball */
+.btn-noball {
+  background: var(--danger-dim);
+  border-color: var(--danger);
+  color: var(--danger);
+  font-size: 0.85rem;
+}
+.btn-noball:hover { background: rgba(255,79,109,0.2); }
+
+/* Wicket */
+.btn-wicket {
+  background: rgba(168,85,247,0.08);
+  border-color: #c084fc;
+  color: #c084fc;
+  font-size: 0.95rem;
+}
+.btn-wicket:hover { background: rgba(192,132,252,0.18); box-shadow: 0 0 16px rgba(192,132,252,0.2); }
+
+/* ── Bottom Action Bar ── */
+.action-bar {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.action-bar-btn {
+  flex: 1;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.85rem 0.5rem;
+  border: 2px solid transparent;
+}
+
+.scoreboard-btn {
+  background: var(--accent);
+  color: #0a0d14;
+  box-shadow: 0 3px 14px rgba(0,229,160,0.3);
+}
+.scoreboard-btn:hover { background: var(--accent-hover); box-shadow: 0 5px 20px rgba(0,229,160,0.4); }
+.scoreboard-btn.active { background: #009e70; }
+
+.undo-btn {
+  background: var(--danger);
+  color: #fff;
+  box-shadow: 0 3px 14px rgba(255,79,109,0.25);
+}
+.undo-btn:hover:not(:disabled) { background: #ff2d50; }
+.undo-btn:disabled { opacity: 0.3; cursor: not-allowed; box-shadow: none; }
+
+/* ── Bottom Sheet — Options Overlay ── */
+.sheet-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+
+.options-sheet {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  width: 100%;
+  max-width: 480px;
+  padding: 1rem 1.25rem 2rem;
+  animation: slideUp 0.25s cubic-bezier(0.4,0,0.2,1);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+.sheet-handle {
+  width: 40px;
+  height: 4px;
+  background: var(--border);
+  border-radius: 100px;
+  margin: 0 auto 1rem;
+}
+
+.sheet-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.sheet-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.sheet-section {
+  margin-bottom: 1rem;
+}
+
+.sheet-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Chip row for run selection in sheets */
+.chip-row {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.chip {
+  flex: 1;
+  min-width: 44px;
+  background: var(--bg-secondary);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.6rem 0.25rem;
+  text-align: center;
+}
+
+.chip:hover { border-color: rgba(255,255,255,0.2); color: var(--text-primary); }
+.chip.active { background: var(--bg-card2); border-color: var(--accent); color: var(--accent); }
+.chip-four.active { border-color: var(--four); color: var(--four); }
+.chip-six.active  { border-color: var(--six);  color: var(--six);  }
+
+/* Toggle pair */
+.toggle-pair {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.toggle-opt {
+  flex: 1;
+  background: var(--bg-secondary);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.55rem;
+}
+
+.toggle-opt:hover { border-color: rgba(255,255,255,0.2); color: var(--text-primary); }
+.toggle-opt.active { background: var(--accent-dim); border-color: var(--accent); color: var(--accent); }
+.toggle-opt.active.danger { background: var(--danger-dim); border-color: var(--danger); color: var(--danger); }
+
+/* Wicket chips */
+.wicket-chip-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4rem;
+}
+
+.wicket-chip {
+  background: var(--bg-secondary);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.5rem 0.3rem;
+  text-align: center;
+}
+
+.wicket-chip:hover { border-color: var(--danger); color: var(--danger); }
+.wicket-chip.active { background: var(--danger-dim); border-color: var(--danger); color: var(--danger); }
+
+/* Sheet buttons */
+.sheet-confirm {
+  display: block;
+  width: 100%;
+  background: linear-gradient(135deg, var(--accent), #00b894);
+  color: #0a0d14;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.85rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 0.5rem;
+  box-shadow: 0 4px 16px rgba(0,229,160,0.3);
+}
+
+.sheet-confirm:hover { transform: translateY(-1px); box-shadow: 0 6px 22px rgba(0,229,160,0.4); }
+
+.sheet-confirm.danger-confirm {
+  background: linear-gradient(135deg, var(--danger), #c0392b);
+  box-shadow: 0 4px 16px rgba(255,79,109,0.3);
+}
+.sheet-confirm.danger-confirm:hover { box-shadow: 0 6px 22px rgba(255,79,109,0.4); }
+
+.sheet-cancel {
+  display: block;
+  width: 100%;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.6rem;
+  border-radius: var(--radius-md);
+}
+.sheet-cancel:hover { color: var(--text-secondary); }
+
+/* Over Complete Overlay */
+.over-complete-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 0.75rem); /* matching margin-bottom of grid */
+  background: rgba(10, 13, 20, 0.85);
+  backdrop-filter: blur(4px);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  animation: fadeIn 0.3s ease;
+}
+
+[data-theme="light"] .over-complete-overlay {
+  background: rgba(240, 244, 248, 0.85);
+}
+
+.over-complete-content {
+  text-align: center;
+}
+
+.over-complete-content h3 {
+  color: var(--text-primary);
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.next-over-btn {
+  background: linear-gradient(135deg, var(--accent), #00b894);
+  color: #0a0d14;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 16px rgba(0,229,160,0.3);
+  cursor: pointer;
+  border: none;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.next-over-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 22px rgba(0,229,160,0.4);
+}
+

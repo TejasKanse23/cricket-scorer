@@ -1,0 +1,112 @@
+/* ── Over Summary Styles ── */
+
+.over-summary {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.os-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  margin-bottom: 1rem;
+}
+
+.overs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.over-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.over-row:hover { border-color: rgba(255,255,255,0.12); }
+
+.over-row.current-over {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.over-num {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  min-width: 52px;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.live-tag {
+  background: var(--accent);
+  color: #0a0d14;
+  font-size: 0.6rem;
+  font-weight: 800;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  animation: pulse 1.5s ease infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.balls-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  flex: 1;
+}
+
+.os-ball {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border: 1.5px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+}
+
+.os-ball.four  { background: rgba(59,158,255,0.15); border-color: var(--four);    color: var(--four); }
+.os-ball.six   { background: var(--six-dim);         border-color: var(--six);     color: var(--six); }
+.os-ball.wkt   { background: var(--danger-dim);      border-color: var(--danger);  color: var(--danger); }
+.os-ball.extra { background: var(--warning-dim);     border-color: var(--warning); color: var(--warning); }
+.os-ball.empty { opacity: 0.25; border-style: dashed; }
+
+.over-total {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  min-width: 28px;
+  text-align: right;
+}
+
+.no-overs {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 1rem 0;
+  font-style: italic;
+}

@@ -1,0 +1,173 @@
+/* ── Score Display — Clean Style ── */
+
+.score-display {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.25rem 1rem;
+  animation: fadeIn 0.25s ease;
+}
+
+/* Meta row */
+.sd-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+
+.sd-team {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.sd-innings-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: var(--accent-dim);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 100px;
+  padding: 0.15rem 0.65rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Big score */
+.sd-score-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.05rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.sd-runs {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.sd-slash {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 3.5rem;
+  color: var(--text-muted);
+  margin: 0 0.05rem;
+}
+
+.sd-wickets {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: var(--danger);
+  line-height: 1;
+}
+
+.sd-overs-small {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  align-self: flex-end;
+  margin-bottom: 0.4rem;
+  margin-left: 0.3rem;
+}
+
+/* Target strip */
+.sd-target-strip {
+  background: var(--accent-dim);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 0.85rem;
+}
+
+.sd-target-strip.won {
+  background: rgba(0,229,160,0.2);
+  border-color: var(--accent);
+}
+
+/* Current over — ball slots */
+.sd-over-section {
+  margin-bottom: 0.85rem;
+}
+
+.sd-over-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  display: block;
+  margin-bottom: 0.45rem;
+}
+
+.sd-ball-slots {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.sd-ball-slot {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  transition: var(--transition);
+  animation: popIn 0.2s ease;
+}
+
+.sd-ball-slot.ball-dot  { color: var(--text-muted); }
+.sd-ball-slot.ball-run  { border-color: rgba(255,255,255,0.2); color: var(--text-primary); background: var(--bg-card2); }
+.sd-ball-slot.ball-four { border-color: var(--four); color: var(--four); background: rgba(59,158,255,0.12); }
+.sd-ball-slot.ball-six  { border-color: var(--six);  color: var(--six);  background: var(--six-dim); }
+.sd-ball-slot.ball-wkt  { border-color: var(--danger); color: var(--danger); background: var(--danger-dim); }
+.sd-ball-slot.ball-extra{ border-color: var(--warning); color: var(--warning); background: var(--warning-dim); }
+.sd-ball-slot.ball-empty{ opacity: 0.25; border-style: dashed; }
+
+/* Stats strip */
+.sd-stats-strip {
+  display: flex;
+  gap: 0.5rem;
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+}
+
+.sd-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.sd-stat.highlight .sd-stat-val { color: var(--accent); }
+
+.sd-stat-val {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.sd-stat-lbl {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
